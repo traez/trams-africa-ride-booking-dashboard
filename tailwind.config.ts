@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        trebuchetMs: ['Trebuchet MS'],
+      },
     },
   },
   plugins: [],
+  darkMode: 'selector',
 };
 export default config;

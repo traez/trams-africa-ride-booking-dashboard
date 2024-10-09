@@ -1,6 +1,6 @@
-# Zeeofor Technologies Portfolio Website
+# Trams Africa Ride Booking Dashboard
 
-My goal for creating a web developer portfolio website is to showcase my skills and projects in a visually appealing way. It serves as my personal branding platform, demonstrating my technical abilities and enhancing my online visibility. By reflecting my creativity and style, my portfolio helps me stand out in the competitive tech industry while facilitating networking through links to my social media profiles.
+This is my project submission for a front-end developer take home job assessment.
 
 ## Table of contents
 
@@ -18,9 +18,19 @@ My goal for creating a web developer portfolio website is to showcase my skills 
 
 ## Overview
 
-### The Challenge/User Stories
+### The Challenge/User Stories  
 
-- Visitors want to see my name and a brief introduction immediately on the homepage, read a short biography in the About Me section to understand my background, and view a grid of my projects with images and descriptions. They also want to click on a project for more in-depth information, see a clear list of my technical skills and proficiencies, and read testimonials to gauge my professionalism and reliability. Additionally, visitors want a simple contact form to reach out for inquiries or collaborations, receive a confirmation message after submitting the form, and enjoy a responsive design that looks good on both desktop and mobile devices. Lastly, they want links to my professional social media profiles for further connection and the option to switch between light and dark modes for personalization.   
+**Objective**  
+- This project aims to develop a ride-booking dashboard that integrates with a public API to fetch data such as city locations and vehicle details. The application tests frontend development skills, API integration, and UI/UX design.  
+**Features**  
+- The ride-booking dashboard features a user-friendly booking system with a form that captures pickup location, destination, date, and time. Upon submission, a dynamic booking summary displays the ride details, allowing users to edit or cancel their bookings. Additionally, the project includes stretch goals for integrating with a public API, such as OpenWeatherMap, Google Places, or Uber, to fetch real-time data for vehicle types and price estimates.   
+**Technical Requirements**   
+- The project is built using React, incorporating React Router for navigation and utilizing either Redux or the Context API for state management. It features a responsive user interface designed with Tailwind CSS or a similar framework, effectively handles API requests for fetching city locations and ride options with appropriate error handling, and implements form validation to ensure the accuracy of locations, dates, and times.    
+**Submission Requirements**  
+- GitHub Repository: Complete project pushed to a public repository, including a README with setup instructions, API usage, and challenges faced.
+- Live Application: Deployed using Vercel, Netlify, or GitHub Pages with a live link provided for testing.  
+**Evaluation Criteria**  
+- The evaluation criteria for the project include the functionality of the booking form and its ability to dynamically fetch data, successful integration of a public API, and adherence to React best practices in code quality and modularity. Additionally, the application should feature a user-friendly, visually appealing, and responsive design, effectively handle API requests along with form validation and error handling, and provide clear documentation in the README.  
 
 ### Screenshot
 
@@ -28,8 +38,8 @@ My goal for creating a web developer portfolio website is to showcase my skills 
 
 ### Links
 
-- Solution URL: [https://github.com/traez/zeeofortech](https://github.com/traez/zeeofortech)
-- Live Site URL: [https://zeeofortech.vercel.app/](https://zeeofortech.vercel.app/)
+- Solution URL: [https://github.com/traez/trams-africa-ride-booking-dashboard](https://github.com/traez/trams-africa-ride-booking-dashboard)
+- Live Site URL: [https://trams-africa-ride-booking-dashboard.vercel.app/](https://trams-africa-ride-booking-dashboard.vercel.app/)
 
 ## My process
 
@@ -44,39 +54,23 @@ My goal for creating a web developer portfolio website is to showcase my skills 
 - Tailwind CSS
 - Typescript
 - Nodejs      
-- react-icons        
+- react-icons      
+- Google Places API   
+- Mapbox API   
+- OpenWeatherMap API     
 
 ### What I learned
    
-- **Understanding -mx-4 in Tailwind CSS**  
-The class `-mx-4` in Tailwind CSS applies the following styles:  
-<blockquote>.-mx-4 {
-    margin-left: -1rem; /* -16px */
-    margin-right: -1rem; /* -16px */
-}</blockquote>  
-Instead of creating space between the container and the parent container, it allows the container to extend beyond the parent. This is a clever way to make the container width equal to that of the parent container.    
-
-- **Dynamic Copyright Year**  
-Using this ensures that the copyright year updates automatically each year: `© {new Date().getFullYear()}`  
-
-- **Efficient Dropdown Interaction with Tailwind CSS**  
-By leveraging Tailwind's utility classes, I created an efficient and visually appealing dropdown interaction. Here’s how to implement it:
-1) Use the group class on the parent element to enable hover effects on child elements.  
-2) Apply these classes to the dropdown container:  
-    * `invisible`: Hides the dropdown by default.  
-    * `group-hover:visible`: Shows the dropdown when the parent is hovered.  
-    * `opacity-0`: Makes the dropdown fully transparent initially.  
-    * `group-hover:opacity-100`: Makes the dropdown fully opaque on hover.  
-    * `transition-all duration-300`: Adds a smooth transition effect. 
-    
-The combination of visibility and opacity changes creates a fade-in effect when hovering. This technique provides a clean, CSS-only solution for dropdown menus without requiring JavaScript. 
-
-- **Markdown preview**  
-Using `Ctrl + Shift + V` in Visual Studio Code (VSCode) opens the Markdown preview for the currently active Markdown file, displaying its rendered content in a separate pane. This feature is built into VSCode by default, allowing for real-time updates as you edit the Markdown file, which means you can see how your formatting appears without needing to refresh manually.  
-You may also right click and select `"open preview"` option.  
-
-- **Implementing External Link Indicators**  
-I implemented external link indicators `(e.g., ↗️)` for links that navigate outside the site or open in a new tab. This is a common web convention that improves user experience by clearly signaling when users are leaving the current site. It enhances usability and accessibility, helping users make informed decisions about navigating external resources. This was an important design consideration to ensure transparency and a smoother browsing experience for users.
+- **Parent Container Height**  
+Always ensure the parent container has a defined height (e.g., `h-[value]`, `min-h-screen`, or `h-full` in Tailwind CSS) when using `flex-grow` on its children. This creates a stable height reference, allowing `flex-grow` to distribute remaining space and ensuring that children stretch proportionately within the parent.   
+- **Comments in .env Files**  
+Comments in `.env` files are added using the `#` symbol at the beginning of a line, allowing developers to include explanations or notes without affecting the functionality of environment variables. Each comment must be placed on its own line, as there is no block comment syntax available; thus, when commenting out multiple lines, each line must start with `#`. This practice helps improve the readability and maintainability of configuration files, enabling users to easily understand the purpose of each variable or temporarily disable specific settings without deleting them.   
+- **Using new APIs for the First Time**  
+This was my first use of the Google Places API, Mapbox API, and OpenWeatherMap API. I had to use my ATM card to sign up for all three in case I exceeded the free charge limit.   
+- **useCallback React Hook and the ESLint Warning**  
+The warning is coming from the React Hooks ESLint plugin, which helps ensure that you're using hooks correctly. The solution is to use useCallback to memoize functions. I learned that the useCallback hook in React is used to memoize a function so that it only gets recreated if its dependencies change. Memoizing a function means caching the result of a function call so that if the function is called again with the same inputs, it can return the cached result instead of recomputing everything. In React, memoizing a function (using hooks like useCallback) helps optimize performance by preventing unnecessary re-creations of that function across component re-renders.  
+- **Following Project Instructions**  
+I followed the instructions closely, except for not using forms and the Context API for state management, as they weren't really needed.  
 
 ### Continued development
 

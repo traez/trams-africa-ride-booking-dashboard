@@ -1,29 +1,17 @@
-import PlacesAutocomplete from "@/components/PlacesAutocomplete";
-import RideEstimator from "@/components/RideEstimator";
+import LocationAutocomplete from "@/components/LocationAutocomplete";
 
 export default function Home() {
   return (
     <>
-      <PlacesAutocomplete />
-      <RideEstimator />
-      {/* <section className="grid grid-cols-1 sm:grid-cols-2 w-full h-full">
-        <article className="h-full flex flex-col items-center justify-between p-4">
-          <p className="text-2xl font-bold">First Section</p>
-          <p className="text-base">
-            Duis a facilisis lorem, vel varius eros. Mauris congue ex id tortor
-            lacinia, ac cursus mi viverra. Integer in lectus nec mi elementum
-            malesuada. Proin non turpis at magna euismod posuere non non justo.
-          </p>
-        </article>
-        <article className="h-full flex flex-col items-center justify-between p-4">
-          <p className="text-2xl font-bold">Second Section</p>
-          <p className="text-base">
-            Duis a facilisis lorem, vel varius eros. Mauris congue ex id tortor
-            lacinia, ac cursus mi viverra. Integer in lectus nec mi elementum
-            malesuada. Proin non turpis at magna euismod posuere non non justo.
-          </p>
-        </article>
-      </section> */}
+      <section className="flex flex-col items-center justify-between w-full h-full p-4 gap-4">
+        <h1 className="text-xl font-bold text-center">
+          Kindly input your PickUp and Destination details.
+        </h1>
+        <h2 className="text-xl font-bold text-center">
+          Feedback will run automatically
+        </h2>
+        <LocationAutocomplete />
+      </section>
     </>
   );
 }
